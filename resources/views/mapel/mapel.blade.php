@@ -1,7 +1,7 @@
 @extends('home.template')
 
 @section('title')
-Halaman Mapel
+Halaman Mapel GUYS
 @endsection
 
 @section('content')
