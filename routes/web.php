@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Service\ServiceController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Mapel\MapelController;
@@ -28,6 +29,20 @@ Route::post('/tambah.savemapel', [MapelController::class, 'save'])->name('savema
 Route::get('/editmapel.data/{id}', [MapelController::class, 'editmapel'])->name('editmapel');
 Route::post('/updatemapel.data/{id}', [MapelController::class, 'updatemapel'])->name('updatemapel');
 Route::get('/hapusmapel.data/{id}', [MapelController::class, 'hapus'])->name('hapusmapel');
+
+
+
+
+Route::get('/service', [ServiceController::class, 'index'])->name('/service');
+Route::get('/tambahservice', [ServiceController::class, 'tambahservice'])->name('/tambahservice');
+Route::post('/tambahservice.save', [ServiceController::class, 'saveservice'])->name('saveservice');
+Route::get('/editservice.data/{id}', [ServiceController::class, 'editservice'])->name('editservice');
+Route::post('/editservice.data/{id}', [ServiceController::class, 'updateservice'])->name('updateservice');
+Route::get('/hapusservice.data/{id}', [ServiceController::class, 'hapusservice'])->name('hapusservice');
+
+
+
+
 
 
 
