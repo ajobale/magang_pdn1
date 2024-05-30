@@ -36,6 +36,8 @@ class HomeController extends Controller
 
             return redirect('home')->with('pesan', 'input data berhasil');
         }
+
+       
     }
 
   
@@ -79,4 +81,6 @@ class HomeController extends Controller
         return back();
     }
 
+
+  
 }
