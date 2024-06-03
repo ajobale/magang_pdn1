@@ -36,7 +36,7 @@ class LoginRequest extends FormRequest
             'email.required' => 'Email tidak boleh dikosong',
             'email.email' => 'email harus yang dimasukkan berupa email',
             'password.min' => 'Minimal password 8 digit',
-        'password.required' => 'password tidak boleh kosong'
+             'password.required' => 'password tidak boleh kosong'
         ];
     }
 
