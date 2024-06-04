@@ -23,7 +23,7 @@ class AuthController extends Controller
             if(Auth::guard('web')->attempt([
                 'email' => $r->email, 
                 'password' => $r->password])) {
-                return redirect('home')->with('pesan', 'berhasil login');
+                return redirect('/homepage')->with('pesan', 'berhasil login');
 
             } else {
                 return back()->with('pesan', 'login gagal');
@@ -55,7 +55,7 @@ class AuthController extends Controller
     public function logout() {
         auth()->logout();
     
-
+        return redirect('/');
     }
 
 
