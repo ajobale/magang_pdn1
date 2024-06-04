@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Review;
 use App\Models\Pengguna;
 use App\Models\Reviewer;
@@ -11,14 +12,17 @@ use App\Http\Requests\ReviewerRequest;
 class ReviewController extends Controller
 {
     public function index() {
+        
 
-        $data['reviewer'] = Reviewer::get();
+        $data['reviewer'] = Reviewer::leftJoin('kategori', 'kategori.id');
     
         return view('review/review', $data);
     }
 
     public function addreviewer(){
-        return view('review/tambah');
+        $data['kategori'] = Kategori::get();
+        
+        return view('review/tambah', $data);
     }
 
     public function savereview(ReviewerRequest $r){
