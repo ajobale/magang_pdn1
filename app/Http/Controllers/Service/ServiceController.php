@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateRequest;
-use Illuminate\Support\Facades\File;
 use App\Http\Requests\ServiceRequest;
 
 class ServiceController extends Controller
