@@ -11,7 +11,7 @@ class MapelController extends Controller
 {
     public function index() {
         $data['mapel'] = Mapel::get();
-        return view ('mapel/mapel', $data);
+        return view ('mapel/mapel');
     }
 
     public function tambah(){
@@ -37,7 +37,7 @@ class MapelController extends Controller
 }
 
     public function editmapel($id) {
-    $data['mapel'] = Mapel::where('id', $id)->first();
+    $data['mapel'] = Mapel::where('id', $id)->findOrFail();
 
     return view('mapel/editmapel', $data);
 
