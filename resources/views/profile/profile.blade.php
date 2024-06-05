@@ -7,8 +7,13 @@ Halaman Home Destinasi
 @section('content')
 
 <div class="max-w-screen-xl flex flex-wrap items-center  mx-auto p-4 justify-center mt-14">
-        
-<h1>Hello Nerd {{ auth()->user()->name }}</h1>
+
+    <div class="container">
+        <div class="border border-blue-500 p-3 mx-auto rounded-md w-96 flex justify-center">
+            <h1 class="text-lg font-bold">Your Profile</h1>
+        </div>
+    </div>
+
 
 
 </div>
