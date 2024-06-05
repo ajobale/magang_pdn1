@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('judul');
-            $table->string('kategori');
             $table->text('review');
             $table->string('foto');
             $table->timestamps();
         });
+
+        
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviewers');
+        Schema::dropIfExists('reviewer');
     }
 };

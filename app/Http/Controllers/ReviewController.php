@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
-use App\Models\Review;
-use App\Models\Pengguna;
+
+
 use App\Models\Reviewer;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReviewerRequest;
@@ -13,16 +13,17 @@ class ReviewController extends Controller
 {
     public function index() {
         
-
-        $data['reviewer'] = Reviewer::leftJoin('kategori', 'kategori.id');
+        $data['reviewer'] = Reviewer::get();
+    
+        // $data['reviewer'] = Reviewer::leftJoin('kategori', 'kategori.id', 'reviewer.id_kategori' );
     
         return view('review/review', $data);
     }
 
     public function addreviewer(){
-        $data['kategori'] = Kategori::get();
+        // $data['kategori'] = Kategori::get();
         
-        return view('review/tambah', $data);
+        return view('review/tambah');
     }
 
     public function savereview(ReviewerRequest $r){
@@ -35,6 +36,7 @@ class ReviewController extends Controller
                 'nama' => $r->nama,
                 'email' => $r->email,
                 'judul' => $r->judul,
+                // 'kategori' => $r->kategori,
                 'review' =>$r->review,
                 'foto' => $foto,
             ]);
@@ -46,7 +48,7 @@ class ReviewController extends Controller
     }
 
     public function editreview($id) {
-        $data['reviewers'] = Review::where('id', $id)->first();
+        $data['reviewers'] = Reviewer::where('id', $id)->first();
 
         return view('reviewer/edit', $data);
     }
