@@ -19,7 +19,7 @@ class SudahLogin
         if(Auth::check()) {
             return $next($request);
         }
-        return redirect()->route('/homepage');
+        return redirect()->route('/');
         
     }
 }

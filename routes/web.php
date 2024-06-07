@@ -19,7 +19,7 @@ Route::middleware('sudah_login')->group(function() {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');                                       
     Route::get('/home', [HomeController::class, 'index'])->name('/home');
    
-    Route::get('/', [HomepageController::class, 'index'])->name('/');
+    Route::get('/homepage', [HomepageController::class, 'index'])->name('/homepage');
     Route::get('/destinasi', [DestinasiController::class, 'index'])->name('/destinasi');
 
     Route::get('/review', [ReviewController::class, 'index'])->name('/review');
